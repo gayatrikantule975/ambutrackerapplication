@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_margin="16dp">
+    <!-- xmlns:android="(link unavailable)"-->
+
+    <!--android:padding="16dp">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Section 1: Identification Documents -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/ivUserRegistrationMainLogo"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ambutrackerloginlogo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Driver Registration..."
+            android:textSize="24dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Identification Documents"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:id="@+id/ivUserRegistrationlicense"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="Driver License"
+                android:src="@drawable/person_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver License"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:id="@+id/ivUserRegistrationdrive_rc"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/person_icon"
+                android:hint="Drive RC"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drive RC"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:id="@+id/ivUserRegistrationambulance_document"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="Ambulance Document"
+                android:src="@drawable/person_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ambulance Document"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <!-- Section 2: Personal Details -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:id="@+id/ivUserRegistrationdriver_aadhar_card"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/person_icon"
+                android:hint="Driver Aadhar Card"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver Aadhar Card"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <ImageView
+                android:id="@+id/ivUserRegistrationdriver_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="Driver Image"
+                android:src="@drawable/person_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver Image"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/etUserRegistrationdriver_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Driver Name"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/person_icon"
+            android:drawablePadding="8dp"
+            android:background="@drawable/edittextbackground"/>
+
+        <EditText
+            android:id="@+id/etUserRegistrationdriver_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Driver Mobile No"
+            android:inputType="number"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/icon_phone"
+            android:drawablePadding="8dp"
+            android:background="@drawable/edittextbackground"/>
+
+        <EditText
+            android:id="@+id/etUserRegistrationdriver_email_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Driver Email Id"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/icon_email"
+            android:drawablePadding="8dp"
+            android:background="@drawable/edittextbackground"/>
+
+        <!-- Section 3: Services Offered -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Services Offered"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            />
+
+        <CheckBox
+            android:id="@+id/driver_provide_medical_facility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Driver Provide Medical Facility" />
+
+        <CheckBox
+            android:id="@+id/driver_provide_oxygen_facility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Driver Provide Oxygen Facility" />
+
+        <!-- Section 4: Login Credentials -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login Credentials"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etUserRegistrationdriver_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Driver Username"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/icon_username"
+            android:drawablePadding="8dp"
+            android:background="@drawable/edittextbackground"/>
+
+        <EditText
+            android:id="@+id/etUserRegistrationdriver_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Driver Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/icon_password"
+            android:drawablePadding="8dp"
+            android:background="@drawable/edittextbackground"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUserRegistrationsubmit_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btnbackground"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
