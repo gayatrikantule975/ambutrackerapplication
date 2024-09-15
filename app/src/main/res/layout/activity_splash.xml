@@ -14,7 +14,13 @@
         android:id="@+id/ivAmbuLogo"
         android:src="@drawable/ambutrackersplashlogo"
         android:layout_centerInParent="true"/>
-
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:id="@+id/ivAmbuLogo1"
+        android:src="@drawable/ambutrackersplashlogo"
+        android:layout_below="@+id/tvSplashTitleone"
+        android:layout_centerInParent="true"/>
 
         <TextView
             android:id="@+id/tvSplashTitleone"
@@ -24,7 +30,7 @@
             android:fontFamily="@font/diplomata"
             android:text="Ambu Tracker"
             android:textColor="#F44336"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:textAlignment="center"
             />
