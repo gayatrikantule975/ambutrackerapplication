@@ -87,7 +87,7 @@
                 android:layout_margin="8dp"
                 />
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:id="@+id/btnUserLogin"
                 android:text="Login"
@@ -108,6 +108,17 @@
                 android:textColor="@color/black"
                 android:gravity="center_horizontal"
                 android:layout_margin="10sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnUserLoginGoogleLogin"
+                android:layout_margin="10sp"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/common_google_signin_btn_text_light"
+               android:text="Sign in with Google"
+                android:textColor="@color/red"
+                android:textSize="20sp"
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

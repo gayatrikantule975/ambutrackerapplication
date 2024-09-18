@@ -16,9 +16,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.ambutrackapplication.comman.NetworkChangeListener;
+import com.google.android.gms.auth.api.phone.SmsRetriever;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -37,6 +46,9 @@ public class UserLoginActivity extends AppCompatActivity {
     Button btnlogin;
     NetworkChangeListener networkChangeListener=new NetworkChangeListener();
     ProgressDialog progressDialog;
+    GoogleSignInOptions googleSignInOptions;//when we click on button then gmail option from which we can login shown
+    GoogleSignInClient googleSignInClient;//option which has selcted is stored there
+    AppCompatButton btnLoginSigninwithgoogle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +60,7 @@ public class UserLoginActivity extends AppCompatActivity {
         checkBox=findViewById(R.id.cbUserLoginCheckbox);
         btnlogin=findViewById(R.id.btnUserLogin);
         tvnewuser=findViewById(R.id.tvUserLoginNewuser);
+        btnLoginSigninwithgoogle=findViewById(R.id.btnUserLoginGoogleLogin);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -61,7 +74,14 @@ public class UserLoginActivity extends AppCompatActivity {
                 }
             }
         });
-
+        googleSignInOptions=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleSignInClient=GoogleSignIn.getClient(UserLoginActivity.this,googleSignInOptions);
+        btnLoginSigninwithgoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();//user defined:made by user,predefined:provied by system or package
+            }
+        });
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,6 +185,30 @@ public class UserLoginActivity extends AppCompatActivity {
                 }
         );
     }
+    private void signIn() {
+        Intent intent = googleSignInClient.getSignInIntent();
+        startActivityForResult(intent, 999);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)//selected otpion in googlesigninclient now stored in data
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==999)
+        {
+            Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                task.getResult(ApiException.class);
+                Intent intent=new Intent(UserLoginActivity.this,UserHomeActivity.class);
+                startActivity(intent);
+                finish();
+            } catch (ApiException e) {
+                Toast.makeText(UserLoginActivity.this,"Something went Wrong",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
+
 
     @Override
     protected void onStart() {
