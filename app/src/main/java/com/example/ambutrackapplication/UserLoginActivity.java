@@ -40,7 +40,7 @@ import cz.msebera.android.httpclient.Header;
 public class UserLoginActivity extends AppCompatActivity {
 
     ImageView ivlogo;
-    TextView tvLoginhere,tvnewuser;
+    TextView tvLoginhere,tvnewuser,tvForgetPassword;
     EditText etusername,etpassword;
     CheckBox checkBox;
     Button btnlogin;
@@ -60,7 +60,16 @@ public class UserLoginActivity extends AppCompatActivity {
         checkBox=findViewById(R.id.cbUserLoginCheckbox);
         btnlogin=findViewById(R.id.btnUserLogin);
         tvnewuser=findViewById(R.id.tvUserLoginNewuser);
+        tvForgetPassword=findViewById(R.id.tvUserLoginForgetPassword);
         btnLoginSigninwithgoogle=findViewById(R.id.btnUserLoginGoogleLogin);
+        tvForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(UserLoginActivity.this, UserConfirmRegisterMobileNoActivityActivity.class);
+                startActivity(i);
+
+            }
+        });
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -163,7 +172,7 @@ public class UserLoginActivity extends AppCompatActivity {
                             if (response.equals("1"))
                             {
                                 Toast.makeText(UserLoginActivity.this, "Login successfully done", Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(UserLoginActivity.this, UserHomeActivity.class);
+                                Intent intent=new Intent(UserLoginActivity.this, UserHomActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -199,7 +208,7 @@ public class UserLoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
-                Intent intent=new Intent(UserLoginActivity.this,UserHomeActivity.class);
+                Intent intent=new Intent(UserLoginActivity.this,UserHomActivity.class);
                 startActivity(intent);
                 finish();
             } catch (ApiException e) {
