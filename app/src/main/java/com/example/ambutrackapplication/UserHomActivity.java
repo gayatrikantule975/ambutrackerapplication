@@ -2,6 +2,7 @@ package com.example.ambutrackapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,42 +20,39 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class UserHomActivity extends AppCompatActivity {
-    TextView tvEmailName,tvEmailId;
-    AppCompatButton btnSignOut;
-    GoogleSignInOptions googleSignInOptions;
-    GoogleSignInClient googleSignInClient;
+public class UserHomActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_hom);
-        tvEmailName=findViewById(R.id.tvHomeName);
-        tvEmailId=findViewById(R.id.tvHomeEmail);
-        btnSignOut=findViewById(R.id.btnLoginWithgoogleLogout);
-        googleSignInOptions=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleSignInClient= GoogleSignIn.getClient(UserHomActivity.this,googleSignInOptions);
-        GoogleSignInAccount googleSignInAccount=GoogleSignIn.getLastSignedInAccount(this);
-        if(googleSignInAccount!=null)
+bottomNavigationView=findViewById(R.id.homeBottonNaviagtionView);
+bottomNavigationView.setOnNavigationItemSelectedListener(this);
+bottomNavigationView.setSelectedItemId(R.id.homebottomnaviagtionMap);
+    }
+MapFragment mapFragment=new MapFragment();
+    AmbulanceFragment ambulanceFragment=new AmbulanceFragment();
+    HospitalFragment hospitalFragment=new HospitalFragment();
+    HelplineFragment helplineFragment=new HelplineFragment();
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.homebottomnaviagtionMap)
         {
-            String name=googleSignInAccount.getDisplayName();
-            String email=googleSignInAccount.getEmail();
-            tvEmailName.setText(name);
-            tvEmailId.setText(email);
-            btnSignOut.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Intent intent=new Intent(UserHomActivity.this,UserLoginActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    });
-                }
-            });
+            getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,mapFragment).commit();
+        }else if(item.getItemId()==R.id.homebottomnaviagtionAmbulance)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,ambulanceFragment).commit();
         }
-
+        else if(item.getItemId()==R.id.homebottomnaviagtionHospital)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,hospitalFragment).commit();
+        }
+        else if(item.getItemId()==R.id.homebottomnaviagtionHelpline)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,helplineFragment).commit();
+        }
+        return true;
     }
 }

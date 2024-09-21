@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.ambutrackapplication.comman.NetworkChangeListener;
+import com.example.ambutrackapplication.comman.URLs;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -161,7 +162,7 @@ public class UserLoginActivity extends AppCompatActivity {
         params.put("username",etusername.getText().toString());
         params.put("password",etpassword.getText().toString());
 
-        client.post("http://192.168.163.27:80/AmbuTrackerAPI/UserLoginDetails",params,new JsonHttpResponseHandler()
+        client.post(URLs.userLoginWebSerivce,params,new JsonHttpResponseHandler()
                 {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

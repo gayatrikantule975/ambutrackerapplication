@@ -16,29 +16,24 @@
         android:theme="@style/Theme.Ambutrackapplication"
         tools:targetApi="31">
         <activity
+            android:name=".UserMyProfileActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".UserSetUpNewPasswordActivity"
             android:exported="false" />
-        <activity
-            android:name=".UserSetUpNewPasswordActivityActivity"
-            android:exported="false" />
+
         <activity
             android:name=".UserForgetPasswordActivity"
             android:exported="false" />
-        <activity
-            android:name=".UsetForgetPasswordActivity"
-            android:exported="false" />
+
         <activity
             android:name=".UserConfirmRegisterMobileNoActivityActivity"
             android:exported="false" />
         <activity
             android:name=".UserHomActivity"
             android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UserHomeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".VerificationActivity"
             android:exported="false" />

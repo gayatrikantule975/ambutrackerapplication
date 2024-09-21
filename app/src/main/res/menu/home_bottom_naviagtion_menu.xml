@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/homebottomnaviagtionMap"
+    android:title="Map"
+    android:icon="@drawable/icon_map"
+    />
+    <item
+        android:id="@+id/homebottomnaviagtionAmbulance"
+        android:title="Ambulance"
+        android:icon="@drawable/ambutrackersplashlogo"
+        />
+    <item
+        android:id="@+id/homebottomnaviagtionHospital"
+        android:title="Hospital"
+        android:icon="@drawable/icon_hospital"
+        />
+    <item
+        android:id="@+id/homebottomnaviagtionHelpline"
+        android:title="Helpline"
+        android:icon="@drawable/icon_phone"
+        />
+</menu>

@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.ambutrackapplication.comman.URLs;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -34,7 +35,8 @@ public class UserSetUpNewPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_set_up_new_password);
         etNewPassword=findViewById(R.id.etSetUpPasswordPassword);
         etConfirmPassword=findViewById(R.id.etSetUpPasswordConfirmPassword);
-        strMobileNo=getIntent().getStringExtra("mobile") ;
+        btnSetupNewPassword=findViewById(R.id.btnSetUpPasswordRegistrationMobileNo);
+        strMobileNo=getIntent().getStringExtra("mobileno") ;
         btnSetupNewPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +65,7 @@ public class UserSetUpNewPasswordActivity extends AppCompatActivity {
                 params.put("mobileno",strMobileNo);
                 Toast.makeText(UserSetUpNewPasswordActivity.this,"Mobile No is recieved Here",Toast.LENGTH_SHORT).show();
                 params.put("password",etNewPassword.getText().toString());
-                client.post("http://192.168.43.217:80/farmerappAPI/userForgetPasswordFarmerApp.php",params,new JsonHttpResponseHandler()
+                client.post(URLs.userForgetPasswordWebSerivice,params,new JsonHttpResponseHandler()
                 {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

@@ -78,7 +78,7 @@ public class UserForgetPasswordActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 progressDialog.dismiss();
                                 Intent i=new Intent(UserForgetPasswordActivity.this, UserSetUpNewPasswordActivity.class);
-                                i.putExtra("mobile",strMobileNo);
+                                i.putExtra("mobileno",strMobileNo);
                                 i.putExtra("verificationCode",strVerificationCode);
                                 startActivity(i);
 

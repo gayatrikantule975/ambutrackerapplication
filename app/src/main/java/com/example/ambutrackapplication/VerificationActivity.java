@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.example.ambutrackapplication.comman.URLs;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -149,7 +150,7 @@ public class VerificationActivity extends AppCompatActivity {
         params.put("username",strUsername);
         params.put("password",strPassword);
 
-        client.post("http://192.168.163.27:80/AmbuTrackerAPI/UserRegistrationDetails.php",params,new JsonHttpResponseHandler()
+        client.post(URLs.userregisterWebService,params,new JsonHttpResponseHandler()
         {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
