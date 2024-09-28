@@ -41,8 +41,9 @@ bottomNavigationView.setSelectedItemId(R.id.homebottomnaviagtionMap);
         return true;
     }
 
-    userHistoryFragment mapFragment=new userHistoryFragment();
+    userMapFragment mapFragment=new userMapFragment();
     UserHospitalFragment hospitalFragment=new UserHospitalFragment();
+    UserHistoryFragment historyFragment=new UserHistoryFragment();
 
 
     @Override
@@ -54,6 +55,10 @@ bottomNavigationView.setSelectedItemId(R.id.homebottomnaviagtionMap);
         else if(item.getItemId()==R.id.homebottomnaviagtionHospital)
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,hospitalFragment).commit();
+        }
+        else if(item.getItemId()==R.id.homebottomnaviagtionHistory)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,historyFragment).commit();
         }
         return true;
     }
