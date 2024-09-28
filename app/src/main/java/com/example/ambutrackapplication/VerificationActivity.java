@@ -159,7 +159,8 @@ public class VerificationActivity extends AppCompatActivity {
                     String status = response.getString("success");
                     if(status.equals("1")){
 //                        progressDialog.dismiss();
-                        Toast.makeText(VerificationActivity.this, "Registration Successfull!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VerificationActivity.this, "Registration Successfull!",
+                                Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(VerificationActivity.this, UserLoginActivity.class);
                         startActivity(i);
                     } else {

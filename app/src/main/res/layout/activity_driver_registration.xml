@@ -151,8 +151,9 @@
         <EditText
             android:id="@+id/etUserRegistrationdriver_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:hint="Driver Name"
+            android:textColorHint="@color/black"
             android:layout_marginTop="8dp"
             android:drawableLeft="@drawable/person_icon"
             android:drawablePadding="8dp"
@@ -161,8 +162,9 @@
         <EditText
             android:id="@+id/etUserRegistrationdriver_mobile_no"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:hint="Driver Mobile No"
+            android:textColorHint="@color/black"
             android:inputType="number"
             android:layout_marginTop="8dp"
             android:drawableLeft="@drawable/icon_phone"
@@ -172,8 +174,9 @@
         <EditText
             android:id="@+id/etUserRegistrationdriver_email_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:hint="Driver Email Id"
+            android:textColorHint="@color/black"
             android:layout_marginTop="8dp"
             android:drawableLeft="@drawable/icon_email"
             android:drawablePadding="8dp"
@@ -215,8 +218,9 @@
         <EditText
             android:id="@+id/etUserRegistrationdriver_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:hint="Driver Username"
+          android:textColorHint="@color/black"
             android:layout_marginTop="8dp"
             android:drawableLeft="@drawable/icon_username"
             android:drawablePadding="8dp"
@@ -225,7 +229,8 @@
         <EditText
             android:id="@+id/etUserRegistrationdriver_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
+            android:textColorHint="@color/black"
             android:hint="Driver Password"
             android:inputType="textPassword"
             android:layout_marginTop="8dp"

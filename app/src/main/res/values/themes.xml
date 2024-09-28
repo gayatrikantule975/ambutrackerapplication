@@ -6,4 +6,6 @@
     </style>
 
     <style name="Theme.Ambutrackapplication" parent="Base.Theme.Ambutrackapplication" />
+
+    <style name="ShowActionBar" parent="Theme.Material3.DayNight"/>
 </resources>

@@ -5,19 +5,16 @@
     android:title="Map"
     android:icon="@drawable/icon_map"
     />
-    <item
-        android:id="@+id/homebottomnaviagtionAmbulance"
-        android:title="Ambulance"
-        android:icon="@drawable/ambutrackersplashlogo"
-        />
+
     <item
         android:id="@+id/homebottomnaviagtionHospital"
         android:title="Hospital"
         android:icon="@drawable/icon_hospital"
         />
     <item
-        android:id="@+id/homebottomnaviagtionHelpline"
-        android:title="Helpline"
-        android:icon="@drawable/icon_phone"
+        android:id="@+id/homebottomnaviagtionHistory"
+        android:title="History"
+        android:icon="@drawable/icon_history"
         />
+
 </menu>

@@ -3,8 +3,10 @@ package com.example.ambutrackapplication;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -50,10 +52,17 @@ public class UserLoginActivity extends AppCompatActivity {
     GoogleSignInOptions googleSignInOptions;//when we click on button then gmail option from which we can login shown
     GoogleSignInClient googleSignInClient;//option which has selcted is stored there
     AppCompatButton btnLoginSigninwithgoogle;
+
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlogin);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(UserLoginActivity.this);
+        editor = preferences.edit();
+
         ivlogo=findViewById(R.id.ivUserLogin);
         tvLoginhere=findViewById(R.id.tvUserLoginMainTitle);
         etusername=findViewById(R.id.etUserLoginUserName);
@@ -157,8 +166,8 @@ public class UserLoginActivity extends AppCompatActivity {
     }
 
     private void UserLoginDetails() {
-        AsyncHttpClient client=new AsyncHttpClient();
-        RequestParams params=new RequestParams();
+        AsyncHttpClient client = new AsyncHttpClient();   //client-server communication //network through data pass
+        RequestParams params = new RequestParams();
         params.put("username",etusername.getText().toString());
         params.put("password",etpassword.getText().toString());
 
@@ -170,9 +179,10 @@ public class UserLoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             String status=response.getString("success");
-                            if (response.equals("1"))
+                            if (status.equals("1"))
                             {
                                 Toast.makeText(UserLoginActivity.this, "Login successfully done", Toast.LENGTH_SHORT).show();
+                                editor.putString("username",etusername.getText().toString()).commit();
                                 Intent intent=new Intent(UserLoginActivity.this, UserHomActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -209,7 +219,7 @@ public class UserLoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
-                Intent intent=new Intent(UserLoginActivity.this,UserHomActivity.class);
+                Intent intent=new Intent(UserLoginActivity.this,UserMyProfileActivity.class);
                 startActivity(intent);
                 finish();
             } catch (ApiException e) {

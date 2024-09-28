@@ -4,33 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".UserMyProfileActivity"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/tvHomeName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="180sp"
+        android:layout_height="180sp"
+        android:id="@+id/ivusermyprofilechangeprogfle"
+        android:src="@drawable/myprofile"
+        android:layout_marginTop="40sp"
+        android:layout_gravity="center_horizontal"
+        />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMyProfileChangeProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_marginTop="16sp"
+            android:background="@drawable/btnbackground"
+            android:text="Change Profile Photo"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+</LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvUserHomeName"
+        android:layout_width="match_parent"
+        android:layout_height="45sp"
         android:layout_below="@+id/ivLoginLogo"
-        android:layout_marginTop="5sp"
         android:text="Name"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_margin="5sp"/>
+        android:layout_margin="16sp"
+        android:background="@drawable/edittextbackground"
+        android:paddingStart="16sp"
+        android:gravity="center_vertical"
+        />
     <TextView
-        android:id="@+id/tvHomeEmail"
+        android:id="@+id/tvuserHomeMobileNo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45sp"
         android:layout_below="@+id/ivLoginLogo"
         android:layout_marginTop="5sp"
-        android:text="Emial ID"
-        android:textAlignment="center"
+        android:text="Mobile No"
+        android:textAlignment="textStart"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_margin="5sp"/>
+
+        android:background="@drawable/edittextbackground"
+        android:paddingStart="16sp"
+        android:gravity="center_vertical"
+        android:layout_margin="16sp"/>
+    <TextView
+        android:id="@+id/tvUserHomeEmail"
+        android:layout_height="45sp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5sp"
+        android:text="Email Id"
+        android:textAlignment="textStart"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        android:background="@drawable/edittextbackground"
+        android:paddingStart="16sp"
+        android:gravity="center_vertical"
+        android:layout_margin="16sp"/>
+    <TextView
+        android:id="@+id/tvUserHomeUserName"
+        android:layout_width="match_parent"
+        android:layout_height="45sp"
+        android:layout_below="@+id/ivLoginLogo"
+        android:layout_margin="16sp"
+        android:text="UserName"
+        android:textAlignment="textStart"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/edittextbackground"
+        android:paddingStart="16sp"
+        android:gravity="center_vertical"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLoginWithgoogleLogout"
         android:layout_width="match_parent"
@@ -41,4 +108,7 @@
         android:text="Logout"
         android:textColor="@color/white"
         android:textSize="20sp" />
+</LinearLayout>
+</ScrollView>
+    
 </LinearLayout>
