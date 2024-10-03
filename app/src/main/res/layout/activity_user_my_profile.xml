@@ -19,6 +19,7 @@
         android:layout_marginTop="40sp"
         android:layout_gravity="center_horizontal"
         />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMyProfileChangeProfile"
             android:layout_width="match_parent"
@@ -30,7 +31,9 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             />
-</LinearLayout>
+
+        </LinearLayout>
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">

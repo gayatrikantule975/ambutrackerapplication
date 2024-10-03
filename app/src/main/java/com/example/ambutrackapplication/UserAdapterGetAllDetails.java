@@ -1,6 +1,7 @@
 package com.example.ambutrackapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+
 import com.bumptech.glide.Glide;
 import com.example.ambutrackapplication.comman.POJOGetAllDetails;
-import com.example.ambutrackapplication.comman.URLs;
 
 import java.util.List;
 
@@ -48,28 +50,36 @@ public class UserAdapterGetAllDetails extends BaseAdapter {
         {
             holder=new ViewHolder();//Intilaize the viewholder class to use its all widgets,In java class we cant directly find id ,so first made inner class,initialize the widgets in this class
             //then intilaize class in getView method,then inflate design in view,then store all ids in holder and then set these ids to view
-           view= inflater.inflate(R.layout.lv_get_all_details, null);
+           view= inflater.inflate(R.layout.lv_get_all_hospital_category, null);
             holder.ivCategoryImage=view.findViewById(R.id.ivCategoryImage);
             holder.tvCategoryName=view.findViewById(R.id.tvCategoryName);
+            holder.cvCategory=view.findViewById(R.id.cvCategoryDetails);
             view.setTag(holder);
-
         }
         else
         {
-            holder= (ViewHolder) view.getTag();
+            holder=(ViewHolder)view.getTag();
         }
         final POJOGetAllDetails obj=pojoGetAllDetails.get(position);//to one by one data means position taking from pojo class and set it to imageview and textview
       holder.tvCategoryName.setText(obj.getcName());
       Glide.with(activity).
-              load("\"http://192.168.113.27:80/AmbuTrackerAPI/images/"+obj.getcImage()).
+              load("http://192.168.113.27:80/AmbuTrackerAPI/images/"+obj.getcImage()).
               skipMemoryCache(true).
               error(R.drawable.image_not_found)
               .into(holder.ivCategoryImage);
-
+        holder.cvCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(activity, UserCategoryWiseHospitalActivity.class);
+                 i.putExtra("hospitalcategoryname",obj.getcName());
+                activity.startActivity(i);
+            }
+        });
         return view;
     }
     class ViewHolder//create one inner class to sore the object of desing view
     {
+        CardView cvCategory;
         ImageView ivCategoryImage;
         TextView tvCategoryName;
     }

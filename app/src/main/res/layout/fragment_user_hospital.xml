@@ -3,14 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UserHospitalFragment"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="@color/white">
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linearlayoutbg"
+        >
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/svHospitalFragmentSearchCategory"
+        android:background="@drawable/svbackground"
+        android:layout_margin="16sp"
+        android:queryHint="Search By Category"
+        android:iconifiedByDefault="false"
+        android:padding="5sp"
+        />
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lvUserHospitalFragementHospitalCategory"
-        />
+     />
+
    <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"

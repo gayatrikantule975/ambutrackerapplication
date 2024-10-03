@@ -5,4 +5,8 @@
     <color name="red">#FF2F1F</color>
     <color name="faintred">#FCDDDD</color>
     <color name="gray">#E6E4E4</color>
+    <color name="faintblack">#878383</color>
+    <color name="green">#37B73C</color>
+    <color name="brown">#BC9B39</color>
+    <color name="darkgray">#CDCACA</color>
 </resources>

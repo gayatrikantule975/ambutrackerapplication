@@ -128,7 +128,7 @@
                 android:drawablePadding="5sp"
                 />
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:id="@+id/btnUserRegistration"
                 android:text="Register"

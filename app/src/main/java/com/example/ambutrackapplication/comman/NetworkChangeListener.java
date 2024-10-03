@@ -29,7 +29,7 @@ public class NetworkChangeListener extends BroadcastReceiver {
                 @Override
                 public void onClick(View v) {
                     alertDialog.dismiss();
-                    onReceive(context, intent);
+                    onReceive(context, intent); 
                 }
             });
         }

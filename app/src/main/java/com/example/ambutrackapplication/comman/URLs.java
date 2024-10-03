@@ -7,4 +7,5 @@ public class URLs {
     public static String userForgetPasswordWebSerivice=WebServiceAddress+"userForgetPasswordambutrackerApplication.php";
     public static String usergetMyDetailsWebService=WebServiceAddress+"usergetMyDetailsAmbutrack.php";
     public static String usergetAllDetialsWebService=WebServiceAddress+"usergetAllDetailsAmbuTrack.php";
+    public static String usergetCategorywiseHospitalWebService=WebServiceAddress+"usergetCategoryWiseHospital.php";
 }

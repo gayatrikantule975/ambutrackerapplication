@@ -12,30 +12,32 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.Ambutrackapplication"
         android:supportsRtl="true"
-android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.Ambutrackapplication"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".UserCategoryWiseHospitalMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserCategoryWiseHospitalActivity"
+            android:exported="false" />
         <activity
             android:name=".UserMyProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".UserSetUpNewPasswordActivity"
             android:exported="false" />
-
         <activity
             android:name=".UserForgetPasswordActivity"
             android:exported="false" />
-
         <activity
             android:name=".UserConfirmRegisterMobileNoActivityActivity"
             android:exported="false" />
         <activity
             android:name=".UserHomActivity"
             android:exported="false"
-            android:theme="@style/ShowActionBar"/>
-
+            android:theme="@style/ShowActionBar" />
         <activity
             android:name=".VerificationActivity"
             android:exported="false" />
