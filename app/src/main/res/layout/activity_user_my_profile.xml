@@ -19,19 +19,38 @@
         android:layout_marginTop="40sp"
         android:layout_gravity="center_horizontal"
         />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1"
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnMyProfileChangeProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:layout_marginTop="16sp"
-            android:background="@drawable/btnbackground"
-            android:text="Change Profile Photo"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+    >
 
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMyProfileChangeProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:layout_marginLeft="16sp"
+                android:layout_marginBottom="16sp"
+                android:background="@drawable/btnbackground"
+                android:text="Change Profile Photo"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_weight="0.8"/>
+<ImageView
+    android:layout_width="0dp"
+    android:layout_height="45sp"
+    android:id="@+id/ivEditProfile"
+    android:layout_weight="0.2"
+    android:src="@drawable/icon_edit"
+    android:layout_marginTop="16sp"
+
+    />
+
+</LinearLayout>
         </LinearLayout>
 
 <ScrollView

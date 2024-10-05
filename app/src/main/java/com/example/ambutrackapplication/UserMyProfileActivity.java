@@ -37,7 +37,7 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class UserMyProfileActivity extends AppCompatActivity {
-    ImageView ivMyprofile;
+    ImageView ivMyprofile,ivEditProfile;
     AppCompatButton btnChangeProfile;
     TextView tvName,tvEmailId,tvMobileNo,tvUserName;
     AppCompatButton btnSignOut;
@@ -54,6 +54,7 @@ public class UserMyProfileActivity extends AppCompatActivity {
         tvEmailId=findViewById(R.id.tvUserHomeEmail);
         tvMobileNo=findViewById(R.id.tvuserHomeMobileNo);
         tvUserName=findViewById(R.id.tvUserHomeUserName);
+        ivEditProfile=findViewById(R.id.ivEditProfile);
         ivMyprofile=findViewById(R.id.ivusermyprofilechangeprogfle);
         btnChangeProfile=findViewById(R.id.btnMyProfileChangeProfile);
         btnSignOut=findViewById(R.id.btnLoginWithgoogleLogout);
@@ -75,6 +76,7 @@ public class UserMyProfileActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Intent intent=new Intent(UserMyProfileActivity.this,UserLoginActivity.class);
+
                             startActivity(intent);
                             finish();
                         }
@@ -127,6 +129,17 @@ public class UserMyProfileActivity extends AppCompatActivity {
                                                         .skipMemoryCache(true)
                                                                 .error(R.drawable.image_not_found)
                                         .into(ivMyprofile);
+                                ivEditProfile.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent i=new Intent(UserMyProfileActivity.this,UserEditProfileActivity.class);
+                                        i.putExtra("name",strName);
+                                        i.putExtra("mobileno",strMobileNo);
+                                        i.putExtra("emialid",strEmailid);
+                                        i.putExtra("username",strUsername);
+                                        startActivity(i);
+                                    }
+                                });
 
                             }
                         } catch (JSONException e) {
