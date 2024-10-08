@@ -109,7 +109,7 @@ public class VerificationActivity extends AppCompatActivity {
             }
         });
 
-        tvResendOTP.setOnClickListener(new View.OnClickListener() {
+        tvResendOTP.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PhoneAuthProvider.getInstance().verifyPhoneNumber("+91" + strMobileNo, 60, TimeUnit.SECONDS,

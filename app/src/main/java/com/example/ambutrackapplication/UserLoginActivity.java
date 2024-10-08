@@ -22,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.example.ambutrackapplication.Admin.AdminHomeActivity;
 import com.example.ambutrackapplication.comman.NetworkChangeListener;
 import com.example.ambutrackapplication.comman.URLs;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
@@ -43,7 +44,7 @@ import cz.msebera.android.httpclient.Header;
 public class UserLoginActivity extends AppCompatActivity {
 
     ImageView ivlogo;
-    TextView tvLoginhere,tvnewuser,tvForgetPassword;
+    TextView tvLoginhere,tvnewuser,tvForgetPassword,tvLoginAsDriver;
     EditText etusername,etpassword;
     CheckBox checkBox;
     Button btnlogin;
@@ -71,6 +72,14 @@ public class UserLoginActivity extends AppCompatActivity {
         btnlogin=findViewById(R.id.btnUserLogin);
         tvnewuser=findViewById(R.id.tvUserLoginNewuser);
         tvForgetPassword=findViewById(R.id.tvUserLoginForgetPassword);
+        tvLoginAsDriver=findViewById(R.id.tvLoginAsDriver);
+        tvLoginAsDriver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(UserLoginActivity.this,DriwerLoginActivity.class);
+                startActivity(i);
+            }
+        });
         btnLoginSigninwithgoogle=findViewById(R.id.btnUserLoginGoogleLogin);
         tvForgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,11 +188,19 @@ public class UserLoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             String status=response.getString("success");
-                            if (status.equals("1"))
+                            String userrole=response.getString("userrole");
+                            if (status.equals("1")&& userrole.equals("user"))
                             {
                                 Toast.makeText(UserLoginActivity.this, "Login successfully done", Toast.LENGTH_SHORT).show();
                                 editor.putString("username",etusername.getText().toString()).commit();
                                 Intent intent=new Intent(UserLoginActivity.this, UserHomActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else if(status.equals("1")&& userrole.equals("Admin"))
+                            {
+                                Toast.makeText(UserLoginActivity.this, "Login successfully done", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(UserLoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

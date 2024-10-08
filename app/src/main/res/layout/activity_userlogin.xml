@@ -133,6 +133,18 @@
                 android:text="Sign in with Google"
                 android:textColor="@color/red"
                 android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLoginAsDriver"
+                android:text="Login As Driver"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/diplomata"
+                android:gravity="center_horizontal"
+                android:layout_margin="10sp"
+                />
         </LinearLayout>
 </ScrollView>
     </androidx.cardview.widget.CardView>

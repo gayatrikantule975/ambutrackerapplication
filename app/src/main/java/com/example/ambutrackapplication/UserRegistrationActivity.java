@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 public class UserRegistrationActivity extends AppCompatActivity {
     ImageView ivRegistrationLogo;
-    TextView tvRegistrationText;
+    TextView tvRegistrationText,tvRegisterAsDriver;
     EditText etRegistrationName,etRegistrationMobileNo,etRegistrationEmailId,etRegistrationUserName,etRegistrationPassword;
     Button btnRgistration;
     ProgressDialog progressDialog;
@@ -42,6 +42,14 @@ public class UserRegistrationActivity extends AppCompatActivity {
             etRegistrationUserName = findViewById(R.id.etUserRegistrationUserName);
             etRegistrationPassword = findViewById(R.id.etUserRegistrationPassword);
             btnRgistration = findViewById(R.id.btnUserRegistration);
+            tvRegisterAsDriver=findViewById(R.id.tvDriverRegistration);
+            tvRegisterAsDriver.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i=new Intent(UserRegistrationActivity.this,DriverRegistrationActivity.class);
+                    startActivity(i);
+                }
+            });
             btnRgistration.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

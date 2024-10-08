@@ -4,12 +4,13 @@ public class POJOGetCategorywiseHospital {
     String strid,strhospitalcategoryname,strhospitalname,strhospitalimage,strhospitaladdress,strhospitalcityname
             ,strhospitalcontactno,strhospitalrating,strhospitalfeedback;
 
-    public POJOGetCategorywiseHospital(String strid, String strhospitalcategoryname, String strhospitalname, String strhospitalimage, String strhospitaladdress,  String strhospitalcityname,String strhospitalcontactno, String strhospitalrating, String strhospitalfeedback) {
+    public POJOGetCategorywiseHospital(String strid, String strhospitalimage, String strhospitalcategoryname, String strhospitalname, String strhospitaladdress,  String strhospitalcityname,String strhospitalcontactno, String strhospitalrating, String strhospitalfeedback) {
         this.strid = strid;
         this.strhospitalcategoryname = strhospitalcategoryname;
-        this.strhospitalname = strhospitalname;
         this.strhospitalimage = strhospitalimage;
+        this.strhospitalname = strhospitalname;
         this.strhospitaladdress = strhospitaladdress;
+        this.strhospitalcityname=strhospitalcityname;
         this.strhospitalcontactno = strhospitalcontactno;
         this.strhospitalrating = strhospitalrating;
         this.strhospitalfeedback = strhospitalfeedback;

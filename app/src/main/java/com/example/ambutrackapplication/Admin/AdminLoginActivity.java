@@ -1,4 +1,4 @@
-package com.example.ambutrackapplication;
+package com.example.ambutrackapplication.Admin;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ambutrackapplication.R;
+import com.example.ambutrackapplication.UserRegistrationActivity;
 import com.example.ambutrackapplication.comman.NetworkChangeListener;
 
 public class AdminLoginActivity extends AppCompatActivity {
